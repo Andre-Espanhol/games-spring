@@ -1,8 +1,9 @@
 package application.model;
+
 import java.util.HashSet;
 import java.util.Set;
 
-import jakarta.persistence.column;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -14,22 +15,21 @@ import jakarta.persistence.OneToMany;
 @Entity
 @Table(name = "categorias")
 
-
-public class Categoria {
+public class Categoria{
     @Id
-    @GeneratedValue(Strategy = GenerationType.IDENTITY)
+    @GeneratedValue (strategy =GenerationType.IDENTITY)
     private long id;
-    @column(unique = true, nullable = false)
+    @Column (unique=true, nullable=false)
     private String nome;
-
+    
     @OneToMany(mappedBy = "categoria")
     private Set<Jogo> jogos = new HashSet<>();
 
-    public long getId(){
+    public long getId() {
         return id;
     }
-    
-    public void setId(long id){
+
+    public void setId(long id) {
         this.id = id;
     }
 
