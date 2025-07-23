@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import application.model.Categoria;
 import application.repository.CategoriaRepository;
 
@@ -74,7 +73,7 @@ public class CategoriaController {
         }
 
         return "redirect:/categoria/list";
-    }
+        }
 
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     public String delete(@RequestParam("id") long id) {
